@@ -8,6 +8,9 @@ angular.module('starterMiApp.controllers', [])
     var url = "http://localhost/IonicServer/resibir.php";
     console.log(url);
 
+      //var serviceUrl = 'file:///android_asset/www/'; // esta variable es necesaria para que funcione en el dispositivo.
+  //$http.get(serviceUrl+'js/data.json') // cargar los datos del fichero data.json
+
 
      $http({
         method: 'POST',

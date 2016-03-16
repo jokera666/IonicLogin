@@ -23,6 +23,8 @@ angular.module('starterMiApp', ['ionic', 'starterMiApp.controllers'])
 })
 
 .config(function($stateProvider, $urlRouterProvider) {
+
+  
   $stateProvider
 
     .state('login', {
