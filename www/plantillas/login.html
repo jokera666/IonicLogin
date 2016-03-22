@@ -18,7 +18,7 @@
                       <input type="password" ng-model="form.pass">
                     </label>
 
-                    <div class="card ng-hide animated shake" ng-show="visibilidadMensaje" id="msgError">
+                    <div class="card" ng-class="animacion" ng-show="visibilidadMensaje" id="msgError">
                       <div class="item item-icon-left errorMsgLogin">
                       <i class="icon ion-alert-circled"></i>
                       <span ng-bind-html="userServ"></span>
@@ -37,3 +37,5 @@
       </ion-content>
 
 </ion-view>
+
+<!-- class="card ng-hide animated shake" -->

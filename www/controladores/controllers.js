@@ -4,11 +4,31 @@ angular.module('starterMiApp.controllers', [])
 
 
   $scope.enviarFormulario = function(form){
-    $scope.visibilidadMensaje = false; 
-    var url = "http://localhost/IonicServer/resibir.php";
+    //$scope.visibilidadMensaje = false;
+    $scope.animacion = ""; 
+    var url = "http://nestor.esy.es/IonicServer/resibir.php";
     console.log(url);
 
-      //var serviceUrl = 'file:///android_asset/www/'; // esta variable es necesaria para que funcione en el dispositivo.
+    if(form == undefined)
+    {
+       $scope.visibilidadMensaje = true;
+       $scope.userServ = "Usuario o contraseña incorrecto."; 
+       $scope.animacion = "animated shake";
+       return;
+       
+    }    
+
+
+    if( form.user == undefined || form.pass  == undefined )
+      {
+        $scope.visibilidadMensaje = true; 
+        $scope.userServ = "Usuario o contraseña incorrecto."; 
+        $scope.animacion = "animated shake";
+        return;
+        
+      }
+
+    //var serviceUrl = 'file:///android_asset/www/'; // esta variable es necesaria para que funcione en el dispositivo.
   //$http.get(serviceUrl+'js/data.json') // cargar los datos del fichero data.json
 
 
@@ -26,9 +46,9 @@ angular.module('starterMiApp.controllers', [])
             if($scope.userServ=="Usuario o contraseña incorrecto.")
             {
                
-               $scope.visibilidadMensaje = true;
-               var myError = angular.element( document.querySelector( '#msgError' ) );
-               myError.append();   //removes element
+              $scope.visibilidadMensaje = true; 
+              $scope.userServ = "Usuario o contraseña incorrecto."; 
+              $scope.animacion = "animated shake";
                
             }
 
